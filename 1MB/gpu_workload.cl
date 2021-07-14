@@ -110,7 +110,7 @@ __kernel void gpu_workload_mid_read(__global float8* data,
         int highBandwidth, int compute_step) {
     
     float8 f1, f2, f3, f4;
-    float8 tmp;
+    volatile float8 tmp;
     float divider;
     uint global_addr, local_addr;
     
@@ -146,7 +146,7 @@ __kernel void gpu_workload_mid_read(__global float8* data,
         //group_result[global_addr + 2] = f3;
         //group_result[global_addr + 3] = f4;
     }
-        if(global_addr==0) group_result[global_addr] = f1;
+    
     }
 
 __kernel void gpu_workload_mid_write(__global float8* data,
@@ -163,10 +163,10 @@ __kernel void gpu_workload_mid_write(__global float8* data,
 
 
     if(get_local_id(0) == 0) {
-        f1 = (float8)(1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f);
-        f2 = (float8)(2.0f, 3.0f, 1.0f, 4.0f, 8.0f, 10.0f, 2.0f, 7.0f);
-        f3 = (float8)(9.0f, 6.0f, 3.0f, 4.0f, 5.0f, 2.0f, 9.0f, 8.0f);
-        f4 = (float8)(3.0f, 2.0f, 4.0f, 5.0f, 8.0f, 1.0f, 2.0f, 5.0f);
+        f1 = (float8)(1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f) * global_addr/(global_addr + 10);
+        f2 = (float8)(2.0f, 3.0f, 1.0f, 4.0f, 8.0f, 10.0f, 2.0f, 7.0f) * global_addr/(global_addr + 10);
+        f3 = (float8)(9.0f, 6.0f, 3.0f, 4.0f, 5.0f, 2.0f, 9.0f, 8.0f) * global_addr/(global_addr + 10);
+        f4 = (float8)(3.0f, 2.0f, 4.0f, 5.0f, 8.0f, 1.0f, 2.0f, 5.0f) * global_addr/(global_addr + 10);
 
         for(int i = 1; i <= compute_step; i++) {
             tmp = f1 * f2;
@@ -206,10 +206,10 @@ __kernel void gpu_workload_low(__global float8* data,
     local_addr = get_local_id(0);
 
     if(get_local_id(0) == 0) {
-        f1 = (float8)(1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f);
-        f2 = (float8)(2.0f, 3.0f, 1.0f, 4.0f, 8.0f, 10.0f, 2.0f, 7.0f);
-        f3 = (float8)(9.0f, 6.0f, 3.0f, 4.0f, 5.0f, 2.0f, 9.0f, 8.0f);
-        f4 = (float8)(3.0f, 2.0f, 4.0f, 5.0f, 8.0f, 1.0f, 2.0f, 5.0f);
+        f1 = (float8)(1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f) * global_addr/(global_addr + 10);
+        f2 = (float8)(2.0f, 3.0f, 1.0f, 4.0f, 8.0f, 10.0f, 2.0f, 7.0f) * global_addr/(global_addr + 10);
+        f3 = (float8)(9.0f, 6.0f, 3.0f, 4.0f, 5.0f, 2.0f, 9.0f, 8.0f) * global_addr/(global_addr + 10);
+        f4 = (float8)(3.0f, 2.0f, 4.0f, 5.0f, 8.0f, 1.0f, 2.0f, 5.0f) * global_addr/(global_addr + 10);
 
 
         for(int i = 1; i <= compute_step; i++) {

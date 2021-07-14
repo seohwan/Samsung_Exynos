@@ -11,4 +11,4 @@ MALI_INSTANCE=$instance ./test $version $step $read $write $sleep &
 MALI_INSTANCE=$instance ./test $version $step $read $write $sleep &
 MALI_INSTANCE=$instance ./test $version $step $read $write $sleep &
 MALI_INSTANCE=$instance ./test $version $step $read $write $sleep &
-MALI_INSTANCE=$instance ./test $version $step $read $write $sleep 
+MALI_INSTANCE=$instance ./test $version $step $read $write $sleep &

@@ -6,7 +6,7 @@
 #define KERNEL_FUNC_LOW "gpu_workload_low"
 // one pixel (RGB) * 1920*1080 = 6MB for a screen shot
 #define ARRAY_SIZE 249600 // 1MB
-#define GLOBAL_SIZE 31200 // ARRAY_SIZE / 8
+#define GLOBAL_SIZE 31200  // ARRAY_SIZE / 8
 #define LOCAL_SIZE 4
 
 #include <math.h>
@@ -17,18 +17,6 @@
 #include <unistd.h>
 
 #include <CL/cl.h>
-
-// RUBIS 0709
-#include <signal.h>
-
-double sum = 0.0;
-int cnt = 0;
-void mystop(int signo) {
-   printf("I received SIGINT(%d)\n", signo);
-   printf("total execution time : %0.3f\n", sum/ 1000000000.0);
-   printf("average : %f\n", sum / cnt/ 1000000000.0);
-   exit(1);
-}
 
 /* Find a GPU or CPU associated with the first available platform 
 
@@ -132,10 +120,6 @@ cl_program build_program(cl_context ctx, cl_device_id dev, const char* filename)
 }
 
 int main(int argc, char *argv[]) {
-
-   // RUBIS 0709
-   signal(SIGINT, (void *)mystop);
-
    /* OpenCL structures */
    int num_context = 500;
    cl_device_id device;
@@ -147,7 +131,6 @@ int main(int argc, char *argv[]) {
    size_t local_size, global_size;
    cl_mem input_buffer, output_buffer;
    cl_int num_groups;
-   cl_event event;
 
    time_t start, end;
    double elapsed;
@@ -200,7 +183,7 @@ int main(int argc, char *argv[]) {
 
 
    /* Create a command queue */
-   queue = clCreateCommandQueue(context, device, CL_QUEUE_PROFILING_ENABLE, &err);
+   queue = clCreateCommandQueue(context, device, 0, &err);
    if(err < 0) {
          perror("Couldn't create a command queue");
          printf("err # : %d\n", err);
@@ -219,16 +202,12 @@ int main(int argc, char *argv[]) {
       work-items should be generated to execute the kernel (global_size) and 
       number of work-items in each work-group (local_size). 
    */
-
-   cl_ulong time_start, time_end;
-   double nano_seconds;
-
    FILE *fp = fopen("/media/movies/mv1.mp4", "r");
    if(fp == NULL){
       printf("cannot open file\n");
       exit(1);
    }
-   //int cnt = 0;
+   int cnt = 0;
    while(1) {
       if(feof(fp) != 0) {
          printf("open new file\n");
@@ -296,16 +275,9 @@ int main(int argc, char *argv[]) {
       //for(int i = 0; i < num_context; i++) {
          usleep(sleep_amount*1000000);
          printf("queue kernel\n");
-         //start = time(NULL);
+         start = time(NULL);
          err = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &global_size,
-               &local_size, 0, NULL, &event);
-         clWaitForEvents(1, &event);
-         clGetEventProfilingInfo(event, CL_PROFILING_COMMAND_START, sizeof(time_start), &time_start, NULL);
-         clGetEventProfilingInfo(event, CL_PROFILING_COMMAND_END, sizeof(time_end), &time_end, NULL);
-         nano_seconds = time_end - time_start;   
-         sum += nano_seconds;
-         if(cnt % 10 == 0)
-            printf("execution time for %dth kernel : %0.3f seconds \n", cnt, nano_seconds / 1000000000.0);
+               &local_size, 0, NULL, NULL);
          if(err < 0) {
             perror("Couldn't enqueue the kernel");
             printf("context # : %d\n", err);
@@ -321,9 +293,9 @@ int main(int argc, char *argv[]) {
             printf("err #: %d\n", err);
             exit(1);
          }   
-         //end = time(NULL); 
-         //elapsed = (double)(end - start);
-         //printf("Elapsed time : %f\n", elapsed);
+         end = time(NULL); 
+         elapsed = (double)(end - start);
+         printf("Elapsed time : %f\n", elapsed);
       //}
 
    }
