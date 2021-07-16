@@ -145,6 +145,7 @@ int main(int argc, char *argv[]) {
    int write = 0;
    int sleep_amount_ = 0;
    float sleep_amount = 0.0;
+   int num_finished_kernels = 0;
 
    if(argc == 6) {
       highBandwidth = atoi(argv[1]);
