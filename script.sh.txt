@@ -49,14 +49,14 @@ run_workload 1 1 1 1500 0 0 30 ${src}
 run_workload 1 0 1 1500 0 0 30 ${src}
 
 # read 1 write 0
-run_workload 1 1 2 1500 1 0 10 ${src}
-run_workload 1 0 2 1500 1 0 10 ${src}
+run_workload 1 1 1 1500 1 0 10 ${src}
+run_workload 1 0 1 1500 1 0 10 ${src}
 #sleep 600
-run_workload 1 1 2 1500 1 0 20 ${src}
-run_workload 1 0 2 1500 1 0 20 ${src}
+run_workload 1 1 1 1500 1 0 20 ${src}
+run_workload 1 0 1 1500 1 0 20 ${src}
 sleep 600
-run_workload 1 1 2 1500 1 0 30 ${src}
-run_workload 1 0 2 1500 1 0 30 ${src}
+run_workload 1 1 1 1500 1 0 30 ${src}
+run_workload 1 0 1 1500 1 0 30 ${src}
 
 # read 1 write 0
 run_workload 1 1 1 1500 1 0 10 ${src}
