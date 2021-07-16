@@ -210,7 +210,7 @@ int main(int argc, char *argv[]) {
    int cnt = 0;
    while(1) {
       if(feof(fp) != 0) {
-         printf("open new file\n");
+         //printf("open new file\n");
          fp = fopen("/media/movies/mv1.mp4", "r");
          if(fp == NULL){
             printf("cannot open file\n");
@@ -274,7 +274,7 @@ int main(int argc, char *argv[]) {
 
       //for(int i = 0; i < num_context; i++) {
          usleep(sleep_amount*1000000);
-         printf("queue kernel\n");
+         //printf("queue kernel\n");
          start = time(NULL);
          err = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &global_size,
                &local_size, 0, NULL, NULL);
@@ -295,7 +295,7 @@ int main(int argc, char *argv[]) {
          }   
          end = time(NULL); 
          elapsed = (double)(end - start);
-         printf("Elapsed time : %f\n", elapsed);
+         //printf("Elapsed time : %f\n", elapsed);
       //}
 
    }

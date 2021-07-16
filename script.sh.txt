@@ -14,7 +14,8 @@ function run_workload(){
 	make
 	chmod +x test
 	output_txt=${src}/out/b${benchmark_instance}_m${workload_instance}_${read}_${write}_${sleep}.txt
-	
+	echo "writing ${output_txt}"
+
 	for ((i=0;i<5;i++)); do
 	#for ((i=0;i<2;i++)); do
 		./run.sh ${workload_instance} ${version} ${step} ${read} ${write} ${sleep} &
