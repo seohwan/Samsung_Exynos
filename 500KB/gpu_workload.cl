@@ -110,7 +110,7 @@ __kernel void gpu_workload_mid_read(__global float8* data,
         int highBandwidth, int compute_step) {
     
     float8 f1, f2, f3, f4;
-    volatile float8 tmp;
+    float8 tmp;
     float divider;
     uint global_addr, local_addr;
     
@@ -141,12 +141,9 @@ __kernel void gpu_workload_mid_read(__global float8* data,
             }
         }
 
-        //group_result[global_addr] = f1;
-        //group_result[global_addr + 1] = f2;
-        //group_result[global_addr + 2] = f3;
-        //group_result[global_addr + 3] = f4;
     }
-    
+    if(global_addr==0) group_result[global_addr] = f1;
+
     }
 
 __kernel void gpu_workload_mid_write(__global float8* data,
