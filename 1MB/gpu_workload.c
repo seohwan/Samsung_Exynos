@@ -245,14 +245,15 @@ int main(int argc, char *argv[]) {
             kernel = clCreateKernel(program, KERNEL_FUNC_MID_READ, &err);
          } else if(read == 0 && write == 1) {
             kernel = clCreateKernel(program, KERNEL_FUNC_MID_WRITE, &err);
+         } else if(read == 0 && write == 0) {
+            kernel = clCreateKernel(program, KERNEL_FUNC_LOW, &err);
          } else {
-            printf("read 0 write 0 are not allowed\n");
+            printf("not allowed option\n");
             exit(1);
          }
-
       } else if(highBandwidth == 2) {
-         kernel = clCreateKernel(program, KERNEL_FUNC_LOW, &err);
-      }
+            printf("not allowed option. use 1 <step> 0 0 instead. \n");
+            exit(1);      }
       if(err < 0) {
          perror("Couldn't create a kernel");
          printf("err # : %d\n", err);

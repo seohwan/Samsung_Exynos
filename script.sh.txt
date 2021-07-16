@@ -39,14 +39,14 @@ src=/home/root/test/1MB
 mkdir ${src}/out
 # input size : 1MB (10h)
 # read 0 write 0
-#run_workload 1 1 2 1500 0 0 10 ${src}
-#run_workload 1 0 2 1500 0 0 10 ${src}
+#run_workload 1 1 1 1500 0 0 10 ${src}
+#run_workload 1 0 1 1500 0 0 10 ${src}
 #sleep 600
-run_workload 1 1 2 1500 0 0 20 ${src}
-run_workload 1 0 2 1500 0 0 20 ${src}
+run_workload 1 1 1 1500 0 0 20 ${src}
+run_workload 1 0 1 1500 0 0 20 ${src}
 sleep 600
-run_workload 1 1 2 1500 0 0 30 ${src}
-run_workload 1 0 2 1500 0 0 30 ${src}
+run_workload 1 1 1 1500 0 0 30 ${src}
+run_workload 1 0 1 1500 0 0 30 ${src}
 
 # read 1 write 0
 run_workload 1 1 2 1500 1 0 10 ${src}
@@ -125,14 +125,14 @@ run_workload 1 1 1 1500 0 1 30 ${src}
 run_workload 1 0 1 1500 0 1 30 ${src}
 
 # read 0 write 0
-run_workload 1 1 2 1500 0 0 10 ${src}
-run_workload 1 0 2 1500 0 0 10 ${src}
+run_workload 1 1 1 1500 0 0 10 ${src}
+run_workload 1 0 1 1500 0 0 10 ${src}
 sleep 600
-run_workload 1 1 2 1500 0 0 20 ${src}
-run_workload 1 0 2 1500 0 0 20 ${src}
+run_workload 1 1 1 1500 0 0 20 ${src}
+run_workload 1 0 1 1500 0 0 20 ${src}
 sleep 600
-run_workload 1 1 2 1500 0 0 30 ${src}
-run_workload 1 0 2 1500 0 0 30 ${src}
+run_workload 1 1 1 1500 0 0 30 ${src}
+run_workload 1 0 1 1500 0 0 30 ${src}
 sleep 600
 
 src=/home/root/test/125KB
@@ -171,14 +171,14 @@ run_workload 1 0 1 1500 0 1 30 ${src}
 sleep 600
 
 # read 0 write 0
-run_workload 1 1 2 1500 0 0 10 ${src}
-run_workload 1 0 2 1500 0 0 10 ${src}
+run_workload 1 1 1 1500 0 0 10 ${src}
+run_workload 1 0 1 1500 0 0 10 ${src}
 sleep 600
-run_workload 1 1 2 1500 0 0 20 ${src}
-run_workload 1 0 2 1500 0 0 20 ${src}
+run_workload 1 1 1 1500 0 0 20 ${src}
+run_workload 1 0 1 1500 0 0 20 ${src}
 sleep 600
-run_workload 1 1 2 1500 0 0 30 ${src}
-run_workload 1 0 2 1500 0 0 30 ${src}
+run_workload 1 1 1 1500 0 0 30 ${src}
+run_workload 1 0 1 1500 0 0 30 ${src}
 sleep 600
 
 sleep 1200
@@ -219,14 +219,14 @@ run_workload 1 0 1 1500 0 1 30 ${src}
 sleep 600
 
 # read 0 write 0
-run_workload 1 1 2 1500 0 0 10 ${src}
-run_workload 1 0 2 1500 0 0 10 ${src}
+run_workload 1 1 1 1500 0 0 10 ${src}
+run_workload 1 0 1 1500 0 0 10 ${src}
 sleep 600
-run_workload 1 1 2 1500 0 0 20 ${src}
-run_workload 1 0 2 1500 0 0 20 ${src}
+run_workload 1 1 1 1500 0 0 20 ${src}
+run_workload 1 0 1 1500 0 0 20 ${src}
 sleep 600
-run_workload 1 1 2 1500 0 0 30 ${src}
-run_workload 1 0 2 1500 0 0 30 ${src}
+run_workload 1 1 1 1500 0 0 30 ${src}
+run_workload 1 0 1 1500 0 0 30 ${src}
 sleep 600
 
 sleep 1200
