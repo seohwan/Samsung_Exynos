@@ -19,11 +19,11 @@ function run_workload(){
 	echo "writing ${output_txt}"
 
 	for ((i=0;i<3;i++)); do
-		# run gpu workload on cpu 4
+		# run gpu workload on cpu 1
 		./run.sh ${workload_instance} ${version} ${step} ${read} ${write} ${sleep} 
 		for i in $(pidof test); do echo $i > /cpuset/workload/tasks; done &
 
-		# run glmark2 on cpu 1-3
+		# run glmark2 on cpu 4
 		MALI_INSTANCE=$benchmark_instance ../${glmark2_small} >> ${output_txt} &
 		sleep 0.5 
 		#while [ $(pidof glmark2-es2-wayland) ]; do true; done &&
