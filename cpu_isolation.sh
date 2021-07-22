@@ -1,6 +1,6 @@
 cpus_sys=0
-cpus_benchmark=1-3
-cpus_workload=4
+cpus_benchmark=4
+cpus_workload=1
 
 mkdir /cpuset
 mount -t cpuset none /cpuset/
