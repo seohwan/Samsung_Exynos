@@ -1,25 +1,28 @@
 # OpenCL_workload
 
 ## Usage
-### original version
+### Prerequisite
 ```
 $ mv mv1.mp4 /media/movies
 $ export XDG_RUNTIME_DIR=/run/user/root 
-$ chmod +x script.sh
+$ chmod +x *.sh
+```
+
+### Original version
+```
 $ ./script.sh
 ```  
 
-### cpu isolation version
+### CPU isolation version
 ```
-$ mv mp1.mp4 /media/movies
-$ export XDG_RUNTIME_DIR=/run/user/root
-
 # if you want to run abbreviated version of benchmark, 
 # modify script_cpu_isolation.sh to run glmark2_small 
-$ chmod +x benchmark_small.sh
-
-$ chmod +x script_cpu_isolation.sh
 
 # run gpu benchmark and gpu workload processes
 ./script_cpu_isolation.sh
+```
+
+### Run glmark2 only
+```
+$ ./b1.sh
 ```
