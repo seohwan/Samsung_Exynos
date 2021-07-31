@@ -5,8 +5,8 @@
 ```
 $ mv mv1.mp4 /media/movies
 $ export XDG_RUNTIME_DIR=/run/user/root 
-$ chmod +x scripts.sh
-$ ./scripts
+$ chmod +x script.sh
+$ ./script.sh
 ```  
 
 ### cpu isolation version
@@ -18,8 +18,8 @@ $ export XDG_RUNTIME_DIR=/run/user/root
 # modify script.sh to run glmark2_small 
 $ chmod +x benchmark_small.sh
 
-$ chmod +x script.sh
+$ chmod +x script_cpu_isolation.sh
 
 # run gpu benchmark and gpu workload processes
-./script.sh
+./script_cpu_isolation.sh
 ```
