@@ -13,11 +13,13 @@ $ ./scripts
 ```
 $ mv mp1.mp4 /media/movies
 $ export XDG_RUNTIME_DIR=/run/user/root
-$ chmod +x cpu_isolation.sh
+
+# if you want to run abbreviated version of benchmark, 
+# modify script.sh to run glmark2_small 
 $ chmod +x benchmark_small.sh
+
 $ chmod +x script.sh
-# set cpu affinities
-./cpu_isolation.sh
+
 # run gpu benchmark and gpu workload processes
 ./script.sh
 ```
