@@ -1,0 +1,722 @@
+[Scene] buffer
+  [Option] buffer-usage
+    Description  : How the buffer will be used
+    Default Value: static
+    Acceptable Values: static,stream,dynamic
+  [Option] columns
+    Description  : The number of mesh subdivisions length-wise
+    Default Value: 100
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] interleave
+    Description  : Whether to interleave vertex attribute data
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] rows
+    Description  : The number of mesh subdisivisions width-wise
+    Default Value: 20
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] update-dispersion
+    Description  : How dispersed the updates are [0.0 - 1.0]
+    Default Value: 0.0
+  [Option] update-fraction
+    Description  : The fraction of the mesh length that is updated at every iteration (0.0-1.0)
+    Default Value: 1.0
+  [Option] update-method
+    Description  : Which method to use to update vertex data
+    Default Value: map
+    Acceptable Values: map,subdata
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] build
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] interleave
+    Description  : Whether to interleave vertex attribute data
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] model
+    Description  : Which model to use
+    Default Value: horse
+    Acceptable Values: asteroid-high,asteroid-low,bunny,cat,cube,horse
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] use-vbo
+    Description  : Whether to use VBOs for rendering
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] bump
+  [Option] bump-render
+    Description  : How to render bumps
+    Default Value: off
+    Acceptable Values: off,normals,normals-tangent,height,high-poly
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] clear
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] conditionals
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-conditionals
+    Description  : Whether each computational step includes an if-else clause
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] fragment-steps
+    Description  : The number of computational steps in the fragment shader
+    Default Value: 1
+  [Option] grid-length
+    Description  : The length of each side of the grid (normalized) (controls the area drawn to)
+    Default Value: 5.0
+  [Option] grid-size
+    Description  : The number of squares per side of the grid (controls the number of vertices)
+    Default Value: 32
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-conditionals
+    Description  : Whether each computational step includes an if-else clause
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] vertex-steps
+    Description  : The number of computational steps in the vertex shader
+    Default Value: 1
+[Scene] desktop
+  [Option] blur-radius
+    Description  : the blur effect radius (in pixels)
+    Default Value: 5
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] effect
+    Description  : The effect to use
+    Default Value: blur
+    Acceptable Values: blur,shadow
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] passes
+    Description  : the number of effect passes (effect dependent)
+    Default Value: 1
+  [Option] separable
+    Description  : use separable convolution for the blur effect
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] shadow-size
+    Description  : the size of the shadow (in pixels)
+    Default Value: 20
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] window-size
+    Description  : the window size as a percentage of the minimum screen dimension [0.0 - 0.5]
+    Default Value: 0.35
+  [Option] windows
+    Description  : the number of windows
+    Default Value: 4
+[Scene] effect2d
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] kernel
+    Description  : The convolution kernel matrix to use [format: "a,b,c...;d,e,f..."
+    Default Value: 0,0,0;0,1,0;0,0,0
+  [Option] normalize
+    Description  : Whether to normalize the supplied convolution kernel matrix
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] function
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-complexity
+    Description  : The complexity of each computational step in the fragment shader
+    Default Value: low
+    Acceptable Values: low,medium
+  [Option] fragment-function
+    Description  : Whether each computational step includes a function call
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] fragment-steps
+    Description  : The number of computational steps in the fragment shader
+    Default Value: 1
+  [Option] grid-length
+    Description  : The length of each side of the grid (normalized) (controls the area drawn to)
+    Default Value: 5.0
+  [Option] grid-size
+    Description  : The number of squares per side of the grid (controls the number of vertices)
+    Default Value: 32
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-complexity
+    Description  : The complexity of each computational step in the vertex shader
+    Default Value: low
+    Acceptable Values: low,medium
+  [Option] vertex-function
+    Description  : Whether each computational step includes an if-else clause
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] vertex-steps
+    Description  : The number of computational steps in the vertex shader
+    Default Value: 1
+[Scene] ideas
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] speed
+    Description  : Time coefficient (1.0 is "wall clock" speed, <1.0 is slower, >1.0 is faster).  A special value of "duration" computes this as a function of the "duration" option
+    Default Value: duration
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] jellyfish
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] loop
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-function
+    Description  : Whether to execute the steps in the vertex shader using a for loop
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] fragment-steps
+    Description  : The number of computational steps in the fragment shader
+    Default Value: 1
+  [Option] fragment-uniform
+    Description  : Whether to use a uniform in the fragment shader for the number of loop iterations to perform (i.e. fragment-steps)
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] grid-length
+    Description  : The length of each side of the grid (normalized) (controls the area drawn to)
+    Default Value: 5.0
+  [Option] grid-size
+    Description  : The number of squares per side of the grid (controls the number of vertices)
+    Default Value: 32
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-function
+    Description  : Whether to execute the steps in the vertex shader using a for loop
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] vertex-steps
+    Description  : The number of computational steps in the vertex shader
+    Default Value: 1
+  [Option] vertex-uniform
+    Description  : Whether to use a uniform in the vertex shader for the number of loop iterations to perform (i.e. vertex-steps)
+    Default Value: true
+    Acceptable Values: false,true
+[Scene] pulsar
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] light
+    Description  : Enable lighting
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] quads
+    Description  : Number of quads to render
+    Default Value: 5
+  [Option] random
+    Description  : Enable random rotation speeds
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] texture
+    Description  : Enable texturing
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] refract
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] index
+    Description  : Index of refraction of the medium to simulate
+    Default Value: 1.2
+  [Option] interleave
+    Description  : Whether to interleave vertex attribute data
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] model
+    Description  : Which model to use
+    Default Value: bunny
+    Acceptable Values: asteroid-high,asteroid-low,bunny,cat,cube,horse
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] texture
+    Description  : Which texture to use
+    Default Value: nasa1
+    Acceptable Values: asteroid-height-map,asteroid-normal-map,asteroid-normal-map-tangent,crate-base,desktop-shadow,desktop-shadow-corner,desktop-window,effect-2d,glyph-atlas,jellyfish-caustics-01,jellyfish-caustics-02,jellyfish-caustics-03,jellyfish-caustics-04,jellyfish-caustics-05,jellyfish-caustics-06,jellyfish-caustics-07,jellyfish-caustics-08,jellyfish-caustics-09,jellyfish-caustics-10,jellyfish-caustics-11,jellyfish-caustics-12,jellyfish-caustics-13,jellyfish-caustics-14,jellyfish-caustics-15,jellyfish-caustics-16,jellyfish-caustics-17,jellyfish-caustics-18,jellyfish-caustics-19,jellyfish-caustics-20,jellyfish-caustics-21,jellyfish-caustics-22,jellyfish-caustics-23,jellyfish-caustics-24,jellyfish-caustics-25,jellyfish-caustics-26,jellyfish-caustics-27,jellyfish-caustics-28,jellyfish-caustics-29,jellyfish-caustics-30,jellyfish-caustics-31,jellyfish-caustics-32,jellyfish256,nasa1,nasa2,nasa3,terrain-backgrounddetailed6,terrain-grasslight-512,terrain-grasslight-512-nm
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] use-vbo
+    Description  : Whether to use VBOs for rendering
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] shading
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] model
+    Description  : Which model to use
+    Default Value: cat
+    Acceptable Values: asteroid-high,asteroid-low,bunny,cat,cube,horse
+  [Option] num-lights
+    Description  : The number of lights applied to the scene (phong only)
+    Default Value: 1
+  [Option] shading
+    Description  : Which shading method to use
+    Default Value: gouraud
+    Acceptable Values: gouraud,blinn-phong-inf,phong,cel
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] shadow
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] interleave
+    Description  : Whether to interleave vertex attribute data
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] use-vbo
+    Description  : Whether to use VBOs for rendering
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] terrain
+  [Option] bloom
+    Description  : Use bloom post-processing effect
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] repeat-overlay
+    Description  : How many times to repeat the terrain texture on the terrain plane (per side)
+    Default Value: 6.0
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] tilt-shift
+    Description  : Use tilt-shift post-processing effect
+    Default Value: true
+    Acceptable Values: false,true
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+[Scene] texture
+  [Option] duration
+    Description  : The duration of each benchmark in seconds
+    Default Value: 10.0
+  [Option] fps-pos
+    Description  : The position on screen where to show FPS
+    Default Value: -1.0,-1.0
+  [Option] fps-size
+    Description  : The width of each glyph for the FPS
+    Default Value: 0.03
+  [Option] fragment-precision
+    Description  : The precision values for the fragment shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default
+  [Option] model
+    Description  : Which model to use
+    Default Value: cube
+    Acceptable Values: asteroid-high,asteroid-low,bunny,cat,cube,horse
+  [Option] show-fps
+    Description  : Show live FPS counter
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] texgen
+    Description  : Whether to generate texcoords in the shader
+    Default Value: false
+    Acceptable Values: false,true
+  [Option] texture
+    Description  : Which texture to use
+    Default Value: crate-base
+    Acceptable Values: asteroid-height-map,asteroid-normal-map,asteroid-normal-map-tangent,crate-base,desktop-shadow,desktop-shadow-corner,desktop-window,effect-2d,glyph-atlas,jellyfish-caustics-01,jellyfish-caustics-02,jellyfish-caustics-03,jellyfish-caustics-04,jellyfish-caustics-05,jellyfish-caustics-06,jellyfish-caustics-07,jellyfish-caustics-08,jellyfish-caustics-09,jellyfish-caustics-10,jellyfish-caustics-11,jellyfish-caustics-12,jellyfish-caustics-13,jellyfish-caustics-14,jellyfish-caustics-15,jellyfish-caustics-16,jellyfish-caustics-17,jellyfish-caustics-18,jellyfish-caustics-19,jellyfish-caustics-20,jellyfish-caustics-21,jellyfish-caustics-22,jellyfish-caustics-23,jellyfish-caustics-24,jellyfish-caustics-25,jellyfish-caustics-26,jellyfish-caustics-27,jellyfish-caustics-28,jellyfish-caustics-29,jellyfish-caustics-30,jellyfish-caustics-31,jellyfish-caustics-32,jellyfish256,nasa1,nasa2,nasa3,terrain-backgrounddetailed6,terrain-grasslight-512,terrain-grasslight-512-nm
+  [Option] texture-filter
+    Description  : The texture filter to use
+    Default Value: nearest
+    Acceptable Values: nearest,linear,linear-shader,mipmap
+  [Option] title
+    Description  : The scene title to show
+    Default Value: 
+  [Option] title-pos
+    Description  : The position on screen where to show the title
+    Default Value: -0.7,-1.0
+  [Option] title-size
+    Description  : The width of each glyph in the title
+    Default Value: 0.03
+  [Option] vertex-precision
+    Description  : The precision values for the vertex shader ("int,float,sampler2d,samplercube")
+    Default Value: default,default,default,default

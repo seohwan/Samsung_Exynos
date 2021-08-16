@@ -1,0 +1,33 @@
+=======================================================
+    glmark2 2017.07
+=======================================================
+    OpenGL Information
+    GL_VENDOR:     ARM
+    GL_RENDERER:   MALI-G52 GPU:0
+    GL_VERSION:    OpenGL ES 3.2 v1.r19p0-01rel0.dde65b3eef1ec7427f92653e880fa9ad
+=======================================================
+[texture] duration=5:texture-filter=nearest: FPS: 77 FrameTime: 12.987 ms
+=======================================================
+                                  glmark2 Score: 77 
+=======================================================
+=======================================================
+    glmark2 2017.07
+=======================================================
+    OpenGL Information
+    GL_VENDOR:     ARM
+    GL_RENDERER:   MALI-G52 GPU:0
+    GL_VERSION:    OpenGL ES 3.2 v1.r19p0-01rel0.dde65b3eef1ec7427f92653e880fa9ad
+=======================================================
+[texture] duration=5:texture-filter=nearest: FPS: 83 FrameTime: 12.048 ms
+=======================================================
+                                  glmark2 Score: 83 
+=======================================================
+=======================================================
+    glmark2 2017.07
+=======================================================
+    OpenGL Information
+    GL_VENDOR:     ARM
+    GL_RENDERER:   MALI-G52 GPU:0
+    GL_VERSION:    OpenGL ES 3.2 v1.r19p0-01rel0.dde65b3eef1ec7427f92653e880fa9ad
+=======================================================
+[texture] duration=5:texture-filter=nearest:
