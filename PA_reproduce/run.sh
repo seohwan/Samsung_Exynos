@@ -7,6 +7,7 @@ function initialize(){
     # turn off processes 
     kill -9 $(pidof glmark2-es2-wayland)
     kill -9 $(pidof rse-compositor)
+    kill -9 $(pidof test)
     /home/root/discovery-off.sh
     systemctl stop discovery_rse2.service
     sleep 2
@@ -58,7 +59,7 @@ function run(){
         sleep 30
         echo "Run benchmark in 5 seconds...."
         sleep 5
-    else 
+    elif [ $workload == 'A' ]; then 
         MALI_INSTANCE=$workload_instance systemctl start discovery_app1.service
         MALI_INSTANCE=$workload_instance systemctl start discovery_app2.service
         MALI_INSTANCE=$workload_instance systemctl start discovery_app3.service
@@ -67,6 +68,14 @@ function run(){
 
         echo "Run benchmark in 13 seconds...."
         sleep 13
+    elif [ $workload == 'S' ]; then 
+        make
+        data_size=`expr 1 \* 1 \* 512` # byte
+        for ((j=0;j<5;j++)); do
+            MALI_INSTANCE=$workload_instance ./test 1 1 $data_size &
+        done
+    else
+        echo "Invalid workload"
     fi
 
 
@@ -87,7 +96,7 @@ function run(){
 
 # echo "# Only Benchmark" 
 # benchmark_instance=0
-# run_benchmark_only $benchmark_instance $workload
+# run_benchmark_only $benchmark_instance
 
 
 initialize
@@ -107,16 +116,31 @@ initialize
 # run $benchmark_instance $workload_instance $workload
 
 
-echo "######## Experiment : B + 5V ##########"
-# B + 5V
-workload=V
+# echo "######## Experiment : B + 5V ##########"
+# # B + 5V
+# workload=V
 
 # # Non Separation
-# benchmark_instance=1
+# benchmark_instance=0
+# workload_instance=0
+# run $benchmark_instance $workload_instance $workload
+
+# # Separation
+# benchmark_instance=0
 # workload_instance=1
 # run $benchmark_instance $workload_instance $workload
 
-# Separation
-benchmark_instance=1
+
+echo "######## Experiment : B + 5S ##########"
+# B + 5S
+workload=S
+
+# Non Separation
+benchmark_instance=0
 workload_instance=0
 run $benchmark_instance $workload_instance $workload
+
+# # Separation
+# benchmark_instance=0
+# workload_instance=1
+# run $benchmark_instance $workload_instance $workload
