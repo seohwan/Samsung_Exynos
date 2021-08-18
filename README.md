@@ -42,7 +42,7 @@ $ ./enable_gpu.sh <benchmark_gpu>
 $ ./move_cpuset.sh benchmark workload
 $ cat /sys/fs/cgroup/cpuset/benchmark/tasks # check if empty
 $ cat /sys/fs/cgroup/cpuset/workload/tasks # check if rse-compositor tasks are there
-$ ./add_task.sh $$ benhmark
+$ ./add_task.sh $$ benchmark
 $ ./benchmark_script.sh
 ```
 ---
