@@ -18,3 +18,9 @@ $ ./workload_script.sh
 ```
 $ ./benchmark_script.sh
 ```
+---
+To monitor GPU utilization, 
+```
+$ ./float8_workload/enable_gpu.sh <gpu>
+$ ./float8_workload/cat_util.sh
+```
