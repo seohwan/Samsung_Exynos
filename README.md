@@ -10,11 +10,11 @@ $ systemctl stop discovery_rse2.service
 ---
 ### 1. Performance Anomaly reproduce (B + [5A, 5V, 5S])
 To reproduce performance anomaly of experiment with 5A, 5V, and 5S, use `PA_reproduce/run.sh`.  
-In this experiment, CPU cores are not partitioned. 
+In this experiment, CPU cores are not partitioned.  
 **GPU separation** : change `benchmark_instance` and `workload_instance` in `run.sh`
 
 ### 2. Synthetic workload experiment (B + 5S)
-To run synthetic workload (5S), use `float8_workload/`. 
+To run synthetic workload (5S), use `float8_workload/`.  
 **GPU separation** : change `benchmark_instance` in `benchmark_script.sh` and `workload_instance` in `workload_script.sh`
 
 #### CPU partitioning 
