@@ -7,11 +7,11 @@ $ export XDG_RUNTIME_DIR=/run/user/root
 $ ./discovery-off.sh
 $ systemctl stop discovery_rse2.service
 ```
-### Performance Anomaly reproduce (B + [5A, 5V, 5S])
+### 1. Performance Anomaly reproduce (B + [5A, 5V, 5S])
 To reproduce performance anomaly of experiment with 5A, 5V, and 5S, use `PA_reproduce/run.sh`.  
 In this experiment, CPU cores are not partitioned. 
 
-### Synthetic workload experiment (B + 5S)
+### 2. Synthetic workload experiment (B + 5S)
 To run synthetic workload (5S), use `float8_workload/`.  
 #### CPU partitioning 
 By default, `benchmark` cpuset's cpu is 4 and `workload` cpuset's cpu is 1.
@@ -32,7 +32,7 @@ $ ./workload_script.sh
 # putty (serial port connection)
 $ ./benchmark_script.sh
 ```
-### 5V exp + CPU partitioning
+### 3. 5V exp + CPU partitioning
 ```
 $ cd float8_workload
 $ ./add_task.sh $$ benchmark
