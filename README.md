@@ -7,10 +7,11 @@ $ export XDG_RUNTIME_DIR=/run/user/root
 $ ./discovery-off.sh
 $ systemctl stop discovery_rse2.service
 ```
-### Performance Anomaly reproduce
-To reproduce performance anomaly of experiment B + 5A and B + 5V, use `PA_reproduce/run.sh`.  
+### Performance Anomaly reproduce (B + [5A, 5V, 5S])
+To reproduce performance anomaly of experiment with 5A, 5V, and 5S, use `PA_reproduce/run.sh`.  
+CPU cores are not partitioned. 
 
-### Synthetic workload
+### Synthetic workload (B + 5S)
 To run synthetic workload (5S), use `float8_workload/`.  
 #### CPU partitioning 
 ```
