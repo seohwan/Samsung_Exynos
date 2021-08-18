@@ -9,21 +9,40 @@ $ systemctl stop discovery_rse2.service
 ```
 ### Performance Anomaly reproduce (B + [5A, 5V, 5S])
 To reproduce performance anomaly of experiment with 5A, 5V, and 5S, use `PA_reproduce/run.sh`.  
-CPU cores are not partitioned. 
+In this experiment, CPU cores are not partitioned. 
 
 ### Synthetic workload experiment (B + 5S)
 To run synthetic workload (5S), use `float8_workload/`.  
 #### CPU partitioning 
+By default, `benchmark` cpuset's cpu is 4 and `workload` cpuset's cpu is 1.
 ```
+$ cd float8_workload
 $ ./cpuset.sh
-$ ./add_task.sh <terminal pid> <benchmark || workload>
+$ ./add_task.sh $$ benchmark
+$ ./add_task.sh <adb shell's pid> workload
 ```
 #### Run synthetic workload
 ```
+# adb shell
+$ cd float8_workload
 $ ./workload_script.sh
 ```
 #### Run GPU benchmark
 ```
+# putty (serial port connection)
+$ ./benchmark_script.sh
+```
+### 5V exp + CPU partitioning
+```
+$ cd float8_workload
+$ ./add_task.sh $$ benchmark
+$ ./enable_gpu.sh <workload_gpu> && ./disable_gpu.sh <benchmark_gpu> 
+$ ./5V_script.sh # and play videos
+$ ./enable_gpu.sh <benchmark_gpu>
+$ ./move_cpuset.sh benchmark workload
+$ cat /sys/fs/cgroup/cpuset/benchmark/tasks # check if empty
+$ cat /sys/fs/cgroup/cpuset/workload/tasks # check if rse-compositor tasks are there
+$ ./add_task.sh $$ benhmark
 $ ./benchmark_script.sh
 ```
 ---
